@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Monitorowanie czujników</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/fix.css">
+</head>
+
+<script type="module" src="src/visualization.js"></script>
+<body>
+<div class="grid">
+    <!-- logo -->
+
+    <div class ="logod">
+            <h1 style="text-align: center">Sensor Wizualizer</h1>
+            <div style="display: flex; flex-direction: row; justify-content: center ;position: relative; top:-40px;right:-70px">
+                <h4 style="text-align: center; position: relative; margin-right: 10px">for</h4>
+                <h4 style="text-align: center; text-shadow: 0 0 3px #0cb300; ">GreenGuard</h4>
+            </div>
+        </div>
+
+    <!-- lewy panel -->
+    <div class="container lpanel" >
+            <h1>Filtry pomiarów</h1>
+            <form id="filterForm" class="filter-form">
+
+                <div class="form-group">
+                    <label for="sensorName" >Nazwa czujnika:</label>
+                    <input type="text" id="sensorName" name="sensorName">
+                </div>
+
+                <div class="form-group">
+                    <label for="location" >Lokalizacja:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tempFrom">Temp. od (°C):</label>
+                        <input type="number" id="tempFrom" name="tempFrom" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tempTo">Temp. do (°C):</label>
+                        <input type="number" id="tempTo" name="tempTo" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="humidFrom">Wilg. od (%):</label>
+                        <input type="number" id="humidFrom" name="humidFrom" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="humidTo">Wilg. do (%):</label>
+                        <input type="number" id="humidTo" name="humidTo" step="0.1">
+                    </div>
+                </div>
+
+                <div class="form-row" style="padding-left:30px ; gap: 50px">
+                    <div class="form-group">
+                        <label for="dateFrom">Data od:</label>
+                        <input type="datetime-local" id="dateFrom" name="dateFrom">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateTo">Data do:</label>
+                        <input type="datetime-local" id="dateTo" name="dateTo">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Zastosuj filtry</button>
+                <button type="button" id="resetBtn" class="clear-button">Wyczyść</button>
+            </form>
+        </div>
+
+    <!-- prawy panel + chart -->
+    <div class="container ppanel">
+        <h3 id="lastRecord">Ostatni Pomiar: --..--..</h3>
+        <div class="chart-wrapper">
+            <div class="chart" id="Chart"></div>
+        </div>
+    </div>
+    <!-- panel wylog-->
+    <div class="container wpanel">
+        <button type="button" class="btn" id="confBtn">Zarządzaj sensorami</button>
+        <button type="button" class="clear-button" id="logOut" style="color: #d9534f;">Wyloguj</button>
+    </div>
+
+    <!-- panel lokalizacji-->
+    <div class="container loc">
+        <h1>Lokalizacje</h1>
+        <div class="scroll" id="listOfF">
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

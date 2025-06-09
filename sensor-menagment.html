@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor Management</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        section { margin-bottom: 1.5rem; }
+        input, button { margin: 0.25rem 0; padding: 0.25rem; }
+        pre { background: #f4f4f4; padding: 1rem; }
+    </style>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/admin.js"></script>
+</head>
+<body>
+<div style="display: flex; flex-direction: column; justify-content: center; position: relative;top:2px">
+    <div style =" display: flex; flex-direction: column;">
+        <h1 style="text-align: center">Sensor Management</h1>
+        <div style="display: flex; flex-direction: row; justify-content: center ;position: relative; top:-40px;right:-90px">
+            <h4 style="text-align: center; position: relative;margin-right: 10px">for</h4>
+            <h4 style="text-align: center; text-shadow: 0 0 3px #0cb300; ">GreenGuard</h4>
+        </div>
+    </div>
+
+
+<div style="display: flex; flex-direction: row; justify-content: center; margin: 10px; position: relative">
+
+<div class="login-container" style="margin: inherit; padding-top: 8%">
+    <section>
+        <h2>Change sensor name</h2>
+        <input type="text" id="oldName" placeholder="Old name">
+        <input type="text" id="newName" placeholder="New name">
+        <button onclick="updateSensor()">PUT</button>
+    </section>
+</div>
+
+<div style =" display: flex; flex-direction: column;margin: inherit;justify-content: center">
+
+
+<div style="display: flex; flex-direction: row;margin: inherit">
+<div class="login-container" style="margin: inherit ; width: 50%">
+    <section>
+        <h2>Get sensor</h2>
+        <input type="text" id="getName" placeholder="Sensor name">
+        <button onclick="getSensor()">GET</button>
+    </section>
+</div>
+
+<div class="login-container" style="margin: inherit; width: 50%">
+    <section>
+        <h2>Delete sensor</h2>
+        <input type="text" id="delName" placeholder="Sensor name">
+        <button onclick="deleteSensor()">DELETE</button>
+    </section>
+</div>
+</div>
+
+<div style="display: flex; justify-content: center">
+<div class="login-container" style="; margin: inherit; width: 85%">
+    <h2>Server response:</h2>
+    <pre id="responseArea" style="text-wrap: wrap"></pre>
+</div>
+</div>
+</div>
+
+<div class="login-container" style="margin: inherit; padding-top: 8%">
+    <section>
+        <h2>Add sensor</h2>
+        <input type="text" id="addName" placeholder="Name">
+        <input type="text" id="addIP" placeholder="IP Address">
+        <input type="text" id="addMAC" placeholder="MAC Address">
+        <label><input type="checkbox" id="addActive"> Active</label><br>
+        <button onclick="addSensor()">POST</button>
+    </section>
+</div>
+</div>
+    <div style="display: flex;justify-content: left; width: 20%;position: relative;left: 3%">
+            <button type="button" class="btn" id="wizBtn">Wizualizacja danych</button>
+            <button type="button"  class="clear-button" id="logOut" style="color: #d9534f; margin-left: 10px">Wyloguj</button>
+    </div>
+</div>
+
+</body>
+</html>

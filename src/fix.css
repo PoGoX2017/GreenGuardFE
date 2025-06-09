@@ -1,0 +1,73 @@
+.grid {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap:10px;
+}
+.lpanel{
+    grid-column: 1 /span 1;
+    grid-row: 2 / span 2;
+    padding-bottom: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.lpanel h1 {
+    margin-bottom: 2px;
+}
+.ppanel{
+    grid-column: 2 /span 2;
+    grid-row: 2 / span 3;
+}
+.ppanel{
+    padding-top: 0;
+    padding-bottom: 0; !important;
+}
+.wpanel{
+    grid-column: 2/ span 2;
+    grid-row: 5;
+}
+.logod{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    justify-items: center;
+}
+.form-row{
+display: flex;
+    gap: 10px;
+}
+.form-group{
+    padding-right: 10px;
+}
+.loc{
+    grid-column: 1;
+    grid-row: 4 /span 2;
+}
+
+
+.locGrid{
+    display: grid;
+    width: 95%;
+    grid-template-columns: 3fr 2fr 1fr ;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    overflow: hidden;
+}
+.locGrid button {
+    grid-column: 3;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+}
+.locGrid h5 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.values{
+    grid-column: 2; !important;
+}

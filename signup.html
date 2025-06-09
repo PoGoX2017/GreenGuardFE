@@ -1,0 +1,29 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Logowanie</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+<div class="login-container">
+    <div class="logo">
+        <h1>Welcome in</h1>
+        <h1>Green Guard</h1>
+    </div>
+
+    <h2>Rejestrowanie</h2>
+    <form id="signupForm">
+        <label for="newUsername"></label><input type="text" id="newUsername" placeholder="Nazwa użytkownika" required>
+        <label for="newPassword"></label><input type="password" id="newPassword" placeholder="Hasło" required>
+        <label for="confirmPassword"></label><input type="password" id="confirmPassword" placeholder="Potwierdź hasło" required>
+        <button type="submit">Zarejestruj</button>
+        <button class="sign-up-button" type="button" id="logInButton">Logowanie</button>
+    </form>
+    <div id="message"></div>
+</div>
+<script src="src/app.js"></script>
+</body>
+</html>
