@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded',  () => {
                 }
             });
 
-            const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading?${params.toString()}`, {
+            const response = await fetch(`api/reading?${params.toString()}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',  () => {
             const readings = await response.json();
 
 
-            const lastResponse = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading/last?${params.toString()}`, {
+            const lastResponse = await fetch(`api/reading/last?${params.toString()}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded',  () => {
     }
 
     async function downloadFavoritesLocation() {
-        const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading/favorite-locations`, {
+        const response = await fetch(`api/reading/favorite-locations`, {
             headers: {'Authorization': `Bearer ${token}`},
         });
         if (!response.ok) {
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded',  () => {
                 const params = new URLSearchParams();
                 params.append("locationName", locationName);
 
-                const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading/last?${params.toString()}`, {
+                const response = await fetch(`api/reading/last?${params.toString()}`, {
                     headers: {'Authorization': `Bearer ${token}`}
                 });
 
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded',  () => {
         //params.append("dateFrom", yesterday.toISOString());
         params.append("locationName", location);
 
-        const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading?${params.toString()}`, {
+        const response = await fetch(`api/reading?${params.toString()}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

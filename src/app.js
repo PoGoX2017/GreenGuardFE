@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
 
-                const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/auth/login`, {
+                const response = await fetch(`api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/auth/signup`, {
+                const response = await fetch(`api/auth/signup`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })

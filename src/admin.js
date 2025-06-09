@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const baseUrl = `http://localhost:${localStorage.getItem('host')}/api/sensor`;
+    const baseUrl = `api/sensor`;
 
     // Funkcja pomocnicza do tworzenia nagłówków z autoryzacją
     function getAuthHeaders() {
