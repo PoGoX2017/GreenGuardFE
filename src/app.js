@@ -1,5 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('host',"9091")
+    const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 9090;
+    localStorage.setItem('host', BACKEND_PORT);
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ username, password })
                 });
 
-                if (response.status === 401) {
+                if (response.status === 500) {
                     throw new Error('Nieprawidłowe dane logowania');
                 } else if (!response.ok) {
                     throw new Error(`Błąd serwera: ${response.status}`);

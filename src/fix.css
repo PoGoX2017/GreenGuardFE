@@ -48,8 +48,8 @@ display: flex;
 
 .locGrid{
     display: grid;
-    width: 95%;
-    grid-template-columns: 3fr 2fr 1fr ;
+    width: 100%;
+    grid-template-columns: 3fr 3fr 1fr ;
     grid-template-rows: 1fr;
     justify-content: center;
     overflow: hidden;

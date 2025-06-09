@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded',  () => {
     let chart;
     let refreshInterval;
     const token = localStorage.getItem('jwtToken');
+    console.log('=== DEBUG VISUALIZATION.JS ===');
+    console.log('Token:', token);
+    console.log('Token length:', token ? token.length : 'null');
     if (!token) {
         window.location.href = 'index.html';
     }
@@ -200,9 +203,10 @@ document.addEventListener('DOMContentLoaded',  () => {
                 chart = initChart();
                 chart.render();
             }
-            await updateFavoritesList(true);
+
             updateChart(readings);
             updateLastReading(lastReading);
+            await updateFavoritesList(true);
 
 
             if (refreshInterval) clearInterval(refreshInterval);
@@ -231,7 +235,7 @@ document.addEventListener('DOMContentLoaded',  () => {
     if (confButton) {
         confButton.addEventListener('click', () => {
             console.log("sensory")
-            window.location.href = `sensor-menagment.html?token=${localStorage.getItem('jwtToken')}`;
+            window.location.href = 'sensor-menagment.html';
         });
     }
     const logOut = document.getElementById('logOut');
@@ -351,16 +355,31 @@ document.addEventListener('DOMContentLoaded',  () => {
             container.appendChild(row);
         });
     }
-    document.getElementById('listOfF').addEventListener('click', (e) => {
+    document.getElementById('listOfF').addEventListener('click', async (e) => {
         const button = e.target.closest('button[data-location]');
         if (!button) return;
 
         const location = button.dataset.location;
+        //const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
         console.log("Kliknięto lokalizację:", location);
+
+        document.getElementById('location').value = location;
+
+        //document.getElementById('dateFrom').value = yesterday.toISOString().slice(0, 16);
+
         const params = new URLSearchParams();
-        params.append("dateFrom",new Date(Date.getTime() - 24 * 60 * 60 * 1000));
-        params.append("locationName",location);
+        //params.append("dateFrom", yesterday.toISOString());
+        params.append("locationName", location);
+
+        const response = await fetch(`http://localhost:${localStorage.getItem('host')}/api/reading?${params.toString()}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        if (!response.ok) throw new Error('Błąd pobierania danych');
+        const readingsloc = await response.json();
+        updateChart(readingsloc);
 
     });
 
