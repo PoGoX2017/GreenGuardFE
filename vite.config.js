@@ -33,8 +33,8 @@ export default defineConfig(({ mode }) => {
         input: {
           main: resolve(__dirname, 'index.html'),
           signup: resolve(__dirname, 'signup.html'),
-          visualization: resolve(__dirname, 'visualization.html'),
-          sensorManagement: resolve(__dirname, 'sensor-management.html')
+          visualization: resolve(__dirname, 'dashboard.html'),
+          sensorManagement: resolve(__dirname, 'sensor-menagment.html')
         }
       }
     },

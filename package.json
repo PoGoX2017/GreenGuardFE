@@ -7,9 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "npm run build && npm run preview",
-    "start:prod": "vite build --mode production && vite preview --port 4173 --host",
     "deploy": "npm install && npm run build && npm run preview",
-    "serve": "npm run build && npx serve -s dist",
     "clean": "rm -rf dist node_modules",
     "fresh-start": "npm run clean && npm install && npm run start"
   },
