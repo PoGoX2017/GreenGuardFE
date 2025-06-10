@@ -120,6 +120,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    window.addFavoriteLocation = async function() {
+        const name = document.getElementById('favSensorName').value;
+        const location = document.getElementById('favLocation').value;
+
+        fetch(`/api/sensors/${encodeURIComponent(name)}/favorites`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ location })
+        })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('responseArea').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => {
+                document.getElementById('responseArea').textContent = 'Error: ' + err;
+            });
+    }
+
+    window.removeFavoriteLocation = async function() {
+        const name = document.getElementById('favSensorName').value;
+        const location = document.getElementById('favLocation').value;
+
+        fetch(`/api/sensors/${encodeURIComponent(name)}/favorites`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ location })
+        })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('responseArea').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => {
+                document.getElementById('responseArea').textContent = 'Error: ' + err;
+            });
+    }
+
+
     const wizButton = document.getElementById('wizBtn');
     if (wizButton) {
         wizButton.addEventListener('click', () => {
