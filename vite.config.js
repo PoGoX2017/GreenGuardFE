@@ -5,6 +5,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const backendPort = env.VITE_BACKEND_PORT || 9090
   const backendUrl = `http://localhost:${backendPort}`
+  console.log(backendUrl);
 
   return {
     server: {

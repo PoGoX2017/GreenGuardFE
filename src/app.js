@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 9090;
     localStorage.setItem('host', BACKEND_PORT);
+
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
