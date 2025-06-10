@@ -28,8 +28,6 @@ Aplikacja wykorzystuje następujące technologie:
 - **JavaScript (ES6+)** - logika aplikacji
 - **npm** - zarządzanie pakietami
 
-*Uwaga: Projekt został utworzony na bazie szablonu Vite + React, jednak React nie jest wykorzystywany - aplikacja oparta jest na czystym HTML, CSS i JavaScript.*
-
 ## Wymagania
 
 Aby uruchomić projekt, potrzebujesz:
