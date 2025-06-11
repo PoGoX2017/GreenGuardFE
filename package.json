@@ -5,12 +5,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run build && npm run preview",
+    "deploy": "npm install && npm run build && npm run preview",
+    "clean": "rm -rf dist node_modules",
+    "fresh-start": "npm run clean && npm install && npm run start"
   },
   "devDependencies": {
+    "nexe": "^5.0.0-beta.4",
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "apexcharts": "^4.7.0"
+    "apexcharts": "^4.7.0",
+    "serve": "^14.2.1"
   }
 }
