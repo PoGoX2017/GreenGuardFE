@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dto = {
                 name: document.getElementById('addName').value,
                 ipAddress: document.getElementById('addIP').value,
-                macAddress: document.getElementById('addMAC').value,
+                location: document.getElementById('addLocation').value,
                 active: document.getElementById('addActive').checked
             };
 
