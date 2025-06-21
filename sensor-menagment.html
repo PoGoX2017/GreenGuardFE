@@ -55,6 +55,18 @@
 </div>
 </div>
 
+    <div class="login-container" style="margin: inherit; padding-top: 2%; width: 88%">
+        <section>
+            <h2>Favorite locations</h2>
+            <input type="text" id="favSensorName" placeholder="Sensor name">
+            <input type="text" id="favLocation" placeholder="Location name">
+            <div>
+                <button onclick="addFavoriteLocation()">Add to Favorites</button>
+                <button onclick="removeFavoriteLocation()">Remove from Favorites</button>
+            </div>
+        </section>
+    </div>
+
 <div style="display: flex; justify-content: center">
 <div class="login-container" style="; margin: inherit; width: 85%">
     <h2>Server response:</h2>
@@ -68,7 +80,7 @@
         <h2>Add sensor</h2>
         <input type="text" id="addName" placeholder="Name">
         <input type="text" id="addIP" placeholder="IP Address">
-        <input type="text" id="addMAC" placeholder="MAC Address">
+        <input type="text" id="addLocation" placeholder="Location">
         <label><input type="checkbox" id="addActive"> Active</label><br>
         <button onclick="addSensor()">POST</button>
     </section>
